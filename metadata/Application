@@ -1,0 +1,31 @@
+{
+    "id": "ExtBox1-ext-gen2170",
+    "type": "application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Tweet"
+        ],
+        "stores": [
+            "Tweets"
+        ],
+        "views": [
+            "Viewport",
+            "Map",
+            "Timeline"
+        ],
+        "name": "GeoTweet",
+        "controllers": [
+            "Main"
+        ]
+    },
+    "customConfigs": [],
+    "designerId": "application",
+    "$viewOrder": 0,
+    "iconCls": "icon-application",
+    "expanded": true
+}

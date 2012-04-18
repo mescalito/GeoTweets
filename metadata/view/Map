@@ -1,0 +1,74 @@
+{
+    "id": "ExtBox1-ext-gen7120",
+    "type": "map",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Map",
+        "designer|userAlias": "map"
+    },
+    "customConfigs": [],
+    "designerId": "a8d03c3e-cc16-49a3-9f01-5131c911970a",
+    "$viewOrder": 1,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen7682",
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMapMaprender",
+                "implHandler": "\r\n        var store = Ext.getStore('Tweets');\r\n        var count = store.getCount();\r\n        //debugger;\r\n\r\n        store.load({\r\n            scope: this,\r\n            callback: function(records) {\r\n                //debugger;\r\n                this.processTweets(records);\r\n            }\r\n        });\r\n\r\n/*\r\nvar neighborhoods = [\r\n    new google.maps.LatLng(52.511467, 13.447179),\r\n    new google.maps.LatLng(52.549061, 13.422975),\r\n    new google.maps.LatLng(52.497622, 13.396110),\r\n    new google.maps.LatLng(52.517683, 13.394393)\r\n];\r\n\r\n\r\nfor (var i = 0; i < neighborhoods.length; i++) {\r\n    var m = neighborhoods[i];\r\n    \r\n    new google.maps.Marker({\r\n        position: m,\r\n        map: gmap,\r\n        draggable: false,\r\n        animation: google.maps.Animation.DROP\r\n    });\r\n}*/",
+                "name": "maprender",
+                "designer|userClassName": "onMapMaprender"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen21472",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "processTweets",
+                "designer|params": [
+                    "tweetlist"
+                ],
+                "implHandler": "        console.log(\"hay \"+tweetlist.length+\" elementos\");\r\n        for (var i = 0, ln = tweetlist.length; i < ln; i++) {\r\n            var tweet = tweetlist[i].data;\r\n            if (tweet.geo && tweet.geo.coordinates) {\r\n                this.addMarker(tweet);\r\n                console.log(\"coordenadas? \"+i);\r\n            }\r\n        }",
+                "designer|userClassName": "processTweets"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen22244",
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "addMarker",
+                "designer|params": [
+                    "tweet"
+                ],
+                "implHandler": "\r\n        var infoWindow = new google.maps.InfoWindow(),\r\n        point = new google.maps.LatLng(\r\n            tweet.geo.coordinates[0],\r\n            tweet.geo.coordinates[1]\r\n        ),\r\n        marker = new google.maps.Marker({\r\n            map: this.getMap(),\r\n            position: point\r\n        });\r\n\r\n        google.maps.event.addListener(marker, \"click\", function() {\r\n            infoWindow.setContent(tweet.text);\r\n            infoWindow.open(this.getMap(), marker);\r\n        });",
+                "designer|userClassName": "addMarker"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

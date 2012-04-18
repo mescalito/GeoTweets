@@ -1,0 +1,70 @@
+{
+    "id": "ExtBox1-ext-gen7633",
+    "type": "controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Main",
+        "designer|userAlias": "main"
+    },
+    "customConfigs": [],
+    "designerId": "d6fade99-ac8e-43c4-8f12-c86b611feaf4",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen8230",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "timeline",
+                "selector": "timeline",
+                "designer|userClassName": "timeline"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8408",
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "map",
+                "selector": "map",
+                "designer|userClassName": "map"
+            },
+            "customConfigs": [],
+            "expanded": true
+        },
+        {
+            "id": "ExtBox1-ext-gen8645",
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonTap",
+                "implHandler": "\r\n\r\n    var store = this.getTimeline().getStore(), \r\n        coords = this.getMap()._geo.config,\r\n        geocode = '40.714186,-74.006414,' + '500mi';\r\n    store.getProxy().setExtraParam('geocode', geocode);\r\n    store.load({\r\n        scope: this,\r\n        callback: function(records) {\r\n            this.getMap().processTweets(records);\r\n        }\r\n    });\r\n\r\n",
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "viewport #buttonRefresh",
+                "designer|userClassName": "onButtonTap"
+            },
+            "customConfigs": [],
+            "expanded": true
+        }
+    ]
+}

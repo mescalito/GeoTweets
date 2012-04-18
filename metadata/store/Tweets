@@ -1,0 +1,56 @@
+{
+    "id": "ExtBox1-ext-gen3080",
+    "type": "jsonpstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "autoSync": null,
+        "model": "Tweet",
+        "storeId": "Tweets",
+        "designer|userClassName": "Tweets",
+        "designer|userAlias": "tweets"
+    },
+    "customConfigs": [],
+    "designerId": "904bafcb-073e-434a-8ec5-862b022ed7ba",
+    "$viewOrder": 0,
+    "expanded": true,
+    "cn": [
+        {
+            "id": "ExtBox1-ext-gen3087",
+            "type": "jsonpproxy",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": "{rpp: 100,\ngeocode: '40.714186,-74.006414,500mi',\nq: 'google',\nuniqueify: Math.random()}",
+                "url": "http://search.twitter.com/search.json",
+                "designer|userClassName": "MyJsonPProxy"
+            },
+            "customConfigs": [],
+            "expanded": true,
+            "cn": [
+                {
+                    "id": "ExtBox1-ext-gen3094",
+                    "type": "jsonreader",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "results",
+                        "designer|userClassName": "MyJsonReader"
+                    },
+                    "customConfigs": [],
+                    "expanded": true
+                }
+            ]
+        }
+    ]
+}

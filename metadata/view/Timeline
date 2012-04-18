@@ -1,0 +1,19 @@
+{
+    "id": "ExtBox1-ext-gen8327",
+    "type": "dataview",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "itemTpl": "<div class=\"tweet\"><div class=\"avatar\"><img src=\"{profile_image_url}\" /></div><div class=\"tweet-content\"><h2>{from_user}</h2><p>{text}</p><p>{geo}</p></div></div>",
+        "store": "Tweets",
+        "designer|userClassName": "Timeline",
+        "designer|userAlias": "timeline"
+    },
+    "customConfigs": [],
+    "designerId": "d295274e-16b6-4d2f-a648-99dffbe8c9d7",
+    "$viewOrder": 2,
+    "expanded": true
+}
